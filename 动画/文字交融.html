@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字交融的动画效果</title>
+    <style>
+        body {
+          background: #000;
+        }
+        p {
+          color: #fff;
+        }
+        .container {
+          text-align: center;
+          /* 背景色重要！！ */
+          background-color: #000;
+          animation: show 2s linear forwards;
+        }
+        .text {
+          color: #fff;
+          font-size: 100px;
+          letter-spacing: -50px;
+          animation: showup 2s linear forwards;
+        }
+        @keyframes showup {
+          0% {
+            filter: blur(8px);
+          }
+          100% {
+            filter: blur(0px);
+            letter-spacing: 10px;
+          }
+        }
+        /* 调整对比度 */
+        @keyframes show {
+          0% {
+            filter: contrast(30);
+          }
+          100% {
+            filter: contrast(1);
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>文字交融的动画效果</p>
+        <p class="text">Hello World</p>
+    </div>
+</body>
+</html>
