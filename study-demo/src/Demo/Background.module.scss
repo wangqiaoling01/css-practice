@@ -1,0 +1,304 @@
+.list {
+    .title {
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.ullist {
+    list-style-type: none;
+}
+
+.transparent {
+    .ullist {
+        display: flex;
+        padding: 5px;
+        // border: 1px solid #999;
+        width: 420px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            width: 100px;
+            background: linear-gradient(90deg, transparent, #fff);
+            pointer-events: none;
+        }
+
+        li {
+            margin-right: 12px;
+            border-radius: 5px;
+            border: 1px solid #666;
+            padding: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background: #666;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.demo2 {
+    display: flex;
+
+    .demo2_1,
+    .demo2_2 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+        margin-right: 10px;
+    }
+
+    .demo2_1 {
+        background: linear-gradient(#fff 0%, #fff 50%, #f00 50%, #f00 100%);
+    }
+
+    .demo2_2 {
+        background: linear-gradient(45deg, #f00 0%, #f00 50%, #fff 50%, #fff 100%);
+    }
+}
+
+.demo3 {
+    display: flex;
+
+    .demo3_1 {
+        margin-right: 10px;
+    }
+
+    .demo3_1 {
+        width: 200px;
+        height: 120px;
+        background:
+            linear-gradient(135deg, transparent 15px, deeppink 0),
+            linear-gradient(-135deg, transparent 15px, deeppink 0),
+            linear-gradient(-45deg, transparent 15px, deeppink 0),
+            linear-gradient(45deg, transparent 15px, deeppink 0);
+        background-size: 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+        background-position: top left, top right, bottom right, bottom left;
+        background-repeat: no-repeat;
+    }
+
+    .demo3_2 {
+        width: 200px;
+        height: 120px;
+        background: repeating-linear-gradient(45deg,
+                #f06a0e,
+                #f06a0e 11px,
+                transparent 11px,
+                transparent 20px)
+    }
+}
+
+.radialBase {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(#fff, #000);
+}
+
+.demo_4 {
+    display: flex;
+
+    .demo_4_1,
+    .demo_4_2,
+    .demo_4_3 {
+        width: 200px;
+        height: 200px;
+        margin-right: 10px;
+    }
+
+    .demo_4_1 {
+        background: radial-gradient(#9c27b0, #ffeb3b);
+    }
+
+    .demo_4_2 {
+        background: radial-gradient(#9c27b0 0%,
+                #9c27b0 50%,
+                #ffeb3b 50%,
+                #ffeb3b 100%);
+    }
+
+    .demo_4_3 {
+        background: radial-gradient(#9c27b0 0%,
+                #9c27b0 50%,
+                #ffeb3b 50.4%,
+                #ffeb3b 100%);
+    }
+}
+
+.demo_5 {
+    display: flex;
+    flex-wrap: wrap;
+
+    .demo_5_1 {
+        width: 200px;
+        height: 100px;
+        margin-right: 10px;
+    }
+
+    .demo_5_1 {
+        background: linear-gradient(#607d8b, #673ab7), rgba(0, 0, 0, .5);
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 15px;
+            right: 0;
+            background-repeat: repeat-x;
+            height: 10px;
+            background-size: 20px 20px;
+            background-image: radial-gradient(circle at 10px -5px,
+                    transparent 12px,
+                    #fff 13px,
+                    #fff 20px);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            right: 0;
+            background-repeat: repeat-x;
+            height: 15px;
+            background-size: 40px 20px;
+            background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
+        }
+    }
+
+    .demo_5_2 {
+        font-size: 18px;
+        position: relative;
+        cursor: pointer;
+        width: 110px;
+        flex: none;
+        margin-right: 10px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: 20px 20px;
+            background-repeat: repeat-x;
+            background-image: radial-gradient(circle at 10px -7px,
+                    transparent 8px,
+                    red 8px,
+                    red 9px,
+                    transparent 9px,
+                );
+            background-position: -10px 30px;
+        }
+
+        &:hover {
+            &::before {
+                animation: moveBottom 2s infinite alternate linear;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: 20px 20px;
+            background-repeat: repeat-x;
+            background-image: radial-gradient(circle at 10px 27px,
+                    transparent 8px,
+                    green 8px,
+                    green 9px,
+                    transparent 9px);
+            background-position: 0 10px;
+        }
+
+        &:hover {
+            &::after {
+                animation: moveUp 2s infinite alternate linear;
+            }
+        }
+    }
+
+    .demo_5_3 {
+        height: 30px;
+        background-size: 20px 20px;
+        font-size: 20px;
+        background-repeat: repeat-x;
+        background-image:
+            radial-gradient(circle at 10px -7px,
+                transparent 8px,
+                currentColor 8px,
+                currentColor 9px,
+                transparent 9px,
+            ),
+            radial-gradient(circle at 10px 27px,
+                transparent 8px,
+                currentColor 8px,
+                currentColor 9px,
+                transparent 9px,
+            );
+        background-position: -10px calc(100% + 16px), 0 calc(100% - 4px);
+
+        &:hover {
+            cursor: pointer;
+            background-image:
+                radial-gradient(circle at 10px -7px,
+                    transparent 8px,
+                    currentColor 8px,
+                    currentColor 9px,
+                    transparent 9px,
+                ),
+                radial-gradient(circle at 10px 27px,
+                    transparent 8px,
+                    currentColor 8px,
+                    currentColor 9px,
+                    transparent 9px,
+                );
+            animation: waveFlow 1s infinite linear;
+        }
+    }
+
+    .demo_5_4,
+    .demo_5_5 {
+        position: relative;
+        width: 400px;
+        height: 160px;
+        margin: 20px auto;
+    }
+
+}
+
+@keyframes moveBottom {
+    100% {
+        background-position: -10px 35px;
+    }
+}
+
+@keyframes moveUp {
+    100% {
+        background-position: 0 5px;
+    }
+}
+
+@keyframes waveFlow {
+    from {
+        background-position-x: -10px, 0;
+    }
+
+    to {
+        background-position-x: -30px, -20px;
+    }
+}
